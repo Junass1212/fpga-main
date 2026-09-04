@@ -1,0 +1,36 @@
+#=============================================================
+# fpga-main .gitignore
+# 原则: 手写的源码/脚本/工程文件入库, 一切可再生的生成产物不入库
+# 注意: gitignore不支持行尾注释, 说明必须独立成行
+#=============================================================
+
+# ============ 仿真生成产物, 均可用脚本+run.do再生 ============
+sim/frames.raw
+sim/out_*.png
+sim/check_*.png
+sim/bg_frame.hex
+sim/test_in_beats.hex
+sim/transcript
+sim/vsim.wlf
+sim/wlf/
+sim/modelsim.ini
+sim/camera_to_dsi_display.mpf
+
+# ============ ModelSim 编译库 ============
+sim/work/
+*.qpg
+
+# ============ TD 综合布线产物, 打开.al重跑Flow即可再生 ============
+td_project/camera_to_dsi_display_Runs/
+td_project/log/
+td_project/bw_*.log
+td_project/bw_*.logw
+td_project/.recent_user_depot.ini
+td_project/design_top_wrapper_route.timingsummary
+
+# ============ 编辑器/系统垃圾 ============
+Thumbs.db
+Desktop.ini
+*.bak
+*~
+*.swp
